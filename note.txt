@@ -1,0 +1,1 @@
+le dossier componentsG regroupe les composants general de ce projet
