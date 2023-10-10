@@ -1,35 +1,16 @@
-const { MongoClient, Db } = require("mongodb");
+// connection a la bd
 
-// Connexion à la base de données avec le serveur Node.js et MongoDB
-let client = null;
+//1) impoter mongoose depuis mongoose
+const mongoose=  require ("mongoose") 
 
-function connecter(url, callback) {
-  // Si le client n'est pas connecté
-  if (client == null) {
-    client = new MongoClient(url);
-    client.connect((erreur) => {
-      if (erreur) {
-        client = null;
-        callback(erreur);
-      } else {
-        // Si le client est connecté
-        callback();
-      }
-    });
-  } else {
-    // Si le client est déjà connecté
-    callback();
-  }
+//créer une fonction asynchrone main
+async function main() {
+    //utiliser la méthode connect de mongoose importé précendemment pout établir la connexion avec la bdd
+    //en paramètre de la méthode connect on lui passe l'url de localhost si on est en 
+    //local ou mettre l'url de mongodb atlas qui pointe vers notre bdd en ligne
+    await mongoose.connect('mongodb://127.0.0.1:27017/nutrilife');
 }
-// connection bd 
-function bd(){
-    return new Db(client,"dbOK");
-}
-// fermer connection a bdd
-function fermerConnection(){
-if(client){
-    client.close();
-    client =null;
-}
-}
-module.exports={ connecter, bd,fermerConnection}
+//appeler la méthode main definie ci-dessus avec un catch pour récuperer un message en cas d'erreur 
+main()
+.then(() =>console.log("on est connecté")) //si ça réussit
+.catch(err => console.log(err)); //si ça echoue
