@@ -93,3 +93,8 @@ font-weight: 700;
 line-height: normal;
 text-transform: capitalize;
 }
+.coordonnee_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
