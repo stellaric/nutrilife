@@ -1,1 +1,19 @@
 le dossier componentsG regroupe les composants general de ce projet
+
+import { useState } from 'react';
+
+function CodeSnippet({ code }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+  };
+
+  return (
+    <div>
+      <pre>{code}</pre>
+      <button onClick={handleCopyClick}>{copied ? 'Copié !' : 'Copier'}</button>
+    </div>
+  );
+}
