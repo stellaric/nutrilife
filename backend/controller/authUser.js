@@ -1,10 +1,11 @@
 const model = require("../models/usersModel");
 const jwt = require("jsonwebtoken");
-const maxAge = 3 * 24 * 60 * 60 * 1000;
-console.log("process", process.env.TOKEN);
+// creation du token
+const maxAge = 3 * 24 * 60 * 60 * 1000; // durée de vie du token
 const createToken = (id) => {
   return jwt.sign(
     { id },
+    // token definit dans.env
     "zexrctvybuni,k;ewsrdtfyguhji,k;dervftgyhuji,kderjnk,sexdrcfjnk,derftgyhujk",
     {
       expiresIn: maxAge,
