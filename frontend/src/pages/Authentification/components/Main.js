@@ -60,13 +60,15 @@ function Inscription() {
   };
 
   return (
-    <div>
+    <div className="form-with-tabs">
       <ToastContainer />
       <div className="form-container">
         <div className="tab">
           <button
             className={
-              activeTab === "inscription" ? "tablinks active" : "tablinks"
+              activeTab === "inscription"
+                ? "tablinks active btnconnexion"
+                : "tablinks"
             }
             onClick={() => handleTabClick("inscription")}
           >
@@ -75,7 +77,9 @@ function Inscription() {
 
           <button
             className={
-              activeTab === "connexion" ? "tablinks active" : "tablinks"
+              activeTab === "connexion"
+                ? "tablinks active  btnconnexion"
+                : "tablinks"
             }
             onClick={() => handleTabClick("connexion")}
           >
@@ -88,11 +92,13 @@ function Inscription() {
             {/* formulaire inscription */}
             <form
               className={
-                activeTab === "inscription" ? "tabcontent active" : "tabcontent"
+                activeTab === "inscription"
+                  ? "tabcontent active myform"
+                  : "tabcontent myform"
               }
               onSubmit={handleSubmit}
             >
-              <div className="radio">
+              <div className="mesinputs">
                 <div>
                   <input
                     type="radio"
@@ -113,47 +119,51 @@ function Inscription() {
                 </div>
               </div>
 
-              <div>
-                <div>
+              <div className="form-groupe">
+                <div className="item-form-prenom">
                   <label htmlFor="nom">Nom</label>
                   <input
                     type="text"
                     id="nom"
                     name="lastname"
                     onChange={handleInput}
+                    className="inputs"
                   />
                 </div>
-                <div>
+                <div className="item-form-prenom">
                   <label htmlFor="prenom">Prénom</label>
                   <input
                     type="text"
                     id="prenom"
                     name="firstname"
                     onChange={handleInput}
+                    className="inputs"
                   />
                 </div>
               </div>
 
-              <div>
-                <div>
+              <div className="form-groupe">
+                <div className="item-form">
                   <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     name="email"
                     id="email"
                     onChange={handleInput}
+                    className="inputs"
                   />
                 </div>
               </div>
 
-              <div>
-                <div>
+              <div className="form-groupe">
+                <div className="item-form">
                   <label htmlFor="password">Mot de passe</label>
                   <input
                     type="password"
                     name="password"
                     id="password"
                     onChange={handleInput}
+                    className="inputs"
                   />
                 </div>
               </div>
@@ -168,7 +178,9 @@ function Inscription() {
                 </label>
               </div>
 
-              <button type="submit">S'inscrire</button>
+              <button type="submit" className="btn_send">
+                S'inscrire
+              </button>
             </form>
 
             {/* formulaire connexion */}
@@ -180,35 +192,41 @@ function Inscription() {
           <div className="form-wrapper">
             <form
               className={
-                activeTab === "connexion" ? "tabcontent active" : "tabcontent"
+                activeTab === "connexion"
+                  ? "tabcontent active myform"
+                  : "tabcontent myform"
               }
               onSubmit={handleSubmit}
             >
-              <div>
-                <div>
+              <div className="form-groupe">
+                <div className="item-form">
                   <label htmlFor="emailConnexion">Email</label>
                   <input
                     type="text"
                     name="email"
                     id="emailConnexion"
                     onChange={handleLogin}
+                    className="inputs"
                   />
                 </div>
               </div>
 
-              <div>
-                <div>
+              <div className="form-groupe">
+                <div className="item-form">
                   <label htmlFor="passwordConnexion">Mot de passe</label>
                   <input
                     type="password"
                     name="password"
                     id="passwordConnexion"
                     onChange={handleLogin}
+                    className="inputs"
                   />
                 </div>
               </div>
 
-              <button type="submit">Se connecter</button>
+              <button type="submit" className="btn_send">
+                Se connecter
+              </button>
             </form>
           </div>
         )}
