@@ -1,10 +1,9 @@
 const express = require("express");
-const port = process.env.PORT || 5002;
 const userRoutes = require("./router/UserRoute");
 const dbb = require("./bd/connect");
 // on permet au front et au back de communiquer enssemble
 const cors = require("cors");
-
+const app = express();
 // c
 const corsOptions = {
   origin: "*",
@@ -15,8 +14,8 @@ const corsOptions = {
   preflightContinue: false,
   allowedHeaders: ["Content-Type"],
 };
+const port = process.env.PORT || 5002;
 
-const app = express();
 app.use(cors(corsOptions));
 
 // on permer au server d'accpter les fichiers json

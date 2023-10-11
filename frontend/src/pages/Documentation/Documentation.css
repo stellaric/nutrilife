@@ -201,3 +201,43 @@ line-height: normal;
     background: #D9D9D9;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
+
+@media only screen and (max-width: 767px) {
+.header_doc {
+height: 560px;
+}
+.header_doc h1 {
+font-size: 45px;
+}
+.main_doc h2 {
+    font-size: 26px;
+    }
+
+ .intro_doc{
+ height: auto;
+   } 
+   .intro_doc p {
+   width: auto;
+}
+.img_doc {
+display: none;
+width: 0%;
+}
+
+.video_doc {
+width: 100%;
+
+}
+.video_doc span {
+width: 320px;
+height: 320px;
+}
+
+.content_doc {
+height: fit-content;
+}
+.button_doc {
+    flex-direction: column;
+}
+
+}

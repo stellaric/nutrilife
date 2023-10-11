@@ -17,3 +17,13 @@ function CodeSnippet({ code }) {
     </div>
   );
 }
+
+
+/*creer register*/
+{
+	"civility" : "M" ,
+	"firstName" :"Pierre" ,
+	"lastName":"Dupont",
+	"email":"pierre@gmail.com",
+	"password":"azerty" 
+}

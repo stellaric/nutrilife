@@ -6,7 +6,7 @@ const createToken = (id) => {
   return jwt.sign(
     { id },
     // token definit dans.env
-    "zexrctvybuni,k;ewsrdtfyguhji,k;dervftgyhuji,kderjnk,sexdrcfjnk,derftgyhujk",
+    process.env.TOKEN,
     {
       expiresIn: maxAge,
     }

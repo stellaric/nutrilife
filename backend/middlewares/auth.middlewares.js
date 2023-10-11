@@ -12,7 +12,7 @@ module.exports.checkAuth = async (req, res, next) => {
         // decode token
         const decodedToken = jwt.verify(
             token,
-            "zexrctvybuni,k;ewsrdtfyguhji,k;dervftgyhuji,kderjnk,sexdrcfjnk,derftgyhujk"
+            process.env.TOKEN
         )
         req.token = token
         req.user = decodedToken

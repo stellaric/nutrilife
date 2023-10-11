@@ -12,9 +12,9 @@ export default function Main() {
 
         <div className="intro_content">
           <div className="intro_video">
-            ceci est une video 
-          </div>
-        <div className="intro_txt">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/3fVU4nKosS0?si=M3NA45b2RKPgu_dV" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+        </div>
+           <div className="intro_txt">
           <p>NutriLife API est une interface de programmation qui permet d'accéder à des informations sur la nutrition et les valeurs nutritives des aliments. Elle peut être utilisée pour développer des applications liées à la santé et la nutrition.</p>
          <img src={img_intro} alt="img_intro" />
         </div>

@@ -20,10 +20,10 @@
   justify-content: center;
 }
 /* Style du formulaire */
-form {
+.form-with-tabs form {
   position: relative;
   background-color: #f0f0f0;
-  width: 80%;
+  width: 100%;
   margin-bottom: 100px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
