@@ -18,7 +18,7 @@ export default function Main() {
           <img src={img_doc} alt="img_doc" />
         </div>
         <div className="video_doc">
-<span> video  </span>
+<span> </span>
         </div>
       </div>
       </section>
