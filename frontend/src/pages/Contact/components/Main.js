@@ -81,20 +81,20 @@ export default function Main() {
   </div>
       </div>
 
-      <div className="coordonnee_contact">
+       {/* <div className="coordonnee_contact">
       <h2>Nos Coordonnées</h2>
 <div className="coordonnee_content">
 <div className="email_nutrilife">email</div>
 <div className="tel_nutrilife">tel</div>
 </div>
       </div>
-       {/* Fenêtre modale de contact */}
+      Fenêtre modale de contact */}
   {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-news">
             <div className="modal-content_news">
               <h3>Message envoyé</h3>
-              <p>Votre message a été envoyé au service client VOP.</p>
+              <p>Votre message a été envoyé au service client NutriLife.</p>
               <button onClick={() => setIsModalOpen(false)}>Fermer</button>
             </div>
           </div>

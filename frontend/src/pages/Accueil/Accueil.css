@@ -162,3 +162,35 @@ text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+@media only screen and (max-width: 767px) {
+    .header_accueil{
+        height: 560px;      
+    }
+    .header_accueil h1 {
+        font-size:75px ;
+    }
+
+    .main_accueil h2 {
+        font-size: 30px;
+    }
+
+    .intro_video{
+        display: none;
+        width: 0%;
+    }
+    .intro_txt {
+        width: 100%;
+    }
+    .intro_txt p {
+        margin-right: 0px;
+        width: 380px;
+    }
+    .faq p {
+        font-size: 20px;
+    }
+    .faq img {
+        width: 320px;
+        margin-left: 20px;
+    }
+ }

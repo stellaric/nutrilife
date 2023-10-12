@@ -74,6 +74,7 @@ function Inscription() {
   console.log("loginuser", loginUser);
 
   return (
+    <main className="main_auth">
     <div className="form-with-tabs">
       <ToastContainer />
       <div className="form-container">
@@ -257,6 +258,7 @@ function Inscription() {
         )}
       </div>
     </div>
+    </main>
   );
 }
 
