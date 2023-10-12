@@ -1,29 +1,30 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "../Authentification.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { login } from "../../../services/user";
+import { register } from "../../../services/user";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logMe } from "../../../redux/authSlice";
 
 function Inscription() {
   const [activeTab, setActiveTab] = useState("inscription"); // Default to the "Inscription" tab
-  const [ConfirmPassWord, setConfirmPassWord] = useState();
   const [newUser, setNewUser] = useState({});
   const [loginUser, setLoginUser] = useState({});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-
+  //function of register
   const handleSubmit = async (e) => {
     console.log("e", e);
     e.preventDefault();
-    const resp = await axios.post("http://localhost:5002/api/user/register", {
-      ...newUser,
-    });
-    console.log(resp?.data?.message);
+    const resp = await register(newUser);
     if (resp.status === 201) {
       setTimeout(() => {
-        toast.success(`👍 ${resp?.data?.message}`, {
+        toast.success(`👍 l'enregistement s'est bien passé`, {
           position: "top-left",
           autoClose: 5000,
           hideProgressBar: false,
@@ -33,8 +34,26 @@ function Inscription() {
           progress: undefined,
         });
       });
+      handleTabClick("connexion");
     }
   };
+
+  //function of login
+  const handleSubmitLongin = useCallback(
+    (e) => {
+      e.preventDefault();
+      (async () => {
+        await dispatch(logMe(loginUser));
+        navigate("/");
+      })();
+    },
+    [dispatch, loginUser.email, loginUser.password]
+  );
+  // async (e) => {
+  //   e.preventDefault();
+  //   const resp = await login(loginUser?.email, loginUser?.password);
+  //   console.log("resp", resp);
+  // };
 
   // fonction pour récupere la saisie de l'utilisateur
   const handleInput = (e) => {
@@ -45,19 +64,14 @@ function Inscription() {
     newUserCopy[name] = value;
     setNewUser(newUserCopy);
   };
-  console.log(newUser);
+
   const handleLogin = (e) => {
     const { name, value } = e.target;
     const LoginCopy = { ...loginUser };
     LoginCopy[name] = value;
     setLoginUser(LoginCopy);
   };
-
-  const handleSubmitLogin = async (e) => {
-    e.preventDefault();
-    const resultat = await login(loginUser.email, loginUser.password);
-    console.log(resultat);
-  };
+  console.log("loginuser", loginUser);
 
   return (
     <div className="form-with-tabs">
@@ -103,7 +117,7 @@ function Inscription() {
                   <input
                     type="radio"
                     id="monsieur"
-                    name="civilite"
+                    name="civility"
                     onChange={handleInput}
                   />
                   <label htmlFor="monsieur">M.</label>
@@ -112,7 +126,7 @@ function Inscription() {
                   <input
                     type="radio"
                     id="madame"
-                    name="civilite"
+                    name="civility"
                     onChange={handleInput}
                   />
                   <label htmlFor="madame">Mme</label>
@@ -125,7 +139,7 @@ function Inscription() {
                   <input
                     type="text"
                     id="nom"
-                    name="lastname"
+                    name="lastName"
                     onChange={handleInput}
                     className="inputs"
                   />
@@ -135,7 +149,7 @@ function Inscription() {
                   <input
                     type="text"
                     id="prenom"
-                    name="firstname"
+                    name="firstName"
                     onChange={handleInput}
                     className="inputs"
                   />
@@ -171,7 +185,7 @@ function Inscription() {
                 <input
                   type="checkbox"
                   id="accepter_conditions"
-                  onChange={handleInput}
+                  // onChange={handleInput}
                 />
                 <label htmlFor="accepter_conditions">
                   J'accepte la politique de confidentialité
@@ -196,7 +210,7 @@ function Inscription() {
                   ? "tabcontent active myform"
                   : "tabcontent myform"
               }
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmitLongin}
             >
               <div className="form-groupe">
                 <div className="item-form">

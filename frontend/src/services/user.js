@@ -1,12 +1,20 @@
-import axios from "axios"
+import axios from "axios";
 
+export const login = async (user) => {
+  const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, {
+    ...user,
+  });
+  return response;
+};
 
-export const login = async(email,password)=>{
-  const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/login`,{email,password})
-   return response 
-}
-
-export const register = async()=>{
-    axios.post(`${process.env.REACT_APP_BASE_URL}/user/register`)
-}
-
+export const register = async (user) => {
+  const response = await fetch(`${process.env.REACT_APP_BASE_URL}/register`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...user }),
+  });
+  return response;
+};
