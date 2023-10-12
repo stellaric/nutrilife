@@ -44,12 +44,12 @@ export default function Main() {
   <ul>
   <li>Users</li>
   <div className="code_doc">
-    <p>La commande find() permet de trouver un utilisateur pécis</p>
-    <code>Post/Users </code>
+    <p>Information concernant un utilisateur</p>
+    <code>http://localhost:PORT/api/user/me/id </code>
   </div>
   <div className="code_doc">
-    <p>La commande find() permet de trouver un utilisateur pécis</p>
-    <code>Put/Users/(id) </code>
+    <p>Afficher tout les utilisateur</p>
+    <code>http://localhost:PORT/api/user/all </code>
   </div>
   <li>Recettes</li>
   <div className="code_doc">
@@ -72,13 +72,12 @@ export default function Main() {
   <li>Users</li>
   
   <div className="code_doc">
-    <p>La commande find() permet de trouver un utilisateur pécis</p>
-    <code>cecie est un code </code>
+    <p>Inscrire un utilisateur</p>
+    <code>http://localhost:PORT/api/user/register </code>
   </div>
-  <li>Recettes</li>
   <div className="code_doc">
-    <p>La commande find() permet de trouver un utilisateur pécis</p>
-    <code>cecie est un code </code>
+    <p>Connexion</p>
+    <code>http://localhost:PORT/api/user/login</code>
   </div>
   
   </ul>
@@ -88,8 +87,8 @@ export default function Main() {
  <ul>
   <li>Users</li>
   <div className="code_doc">
-    <p>La commande find() permet de trouver un utilisateur pécis</p>
-    <code>cecie est un code </code>
+    <p>Modifier un utilisateur </p>
+    <code>http://localhost:PORT/api/user/id</code>
   </div>
   <div className="code_doc">
     <p>La commande find() permet de trouver un utilisateur pécis</p>
