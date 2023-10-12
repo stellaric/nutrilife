@@ -19,11 +19,11 @@
   font-weight: bold;
   font-size: 30px;
   border: none;
-      background: #d4d4d4;
+  background: #d4d4d4;
 }
 
-.tablinks:hover{
-    background: #406b41;
+.tablinks:hover {
+  background: #406b41;
 }
 
 .tabcontent {

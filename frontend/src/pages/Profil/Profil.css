@@ -76,4 +76,8 @@ line-height: normal;
 .profil_content {
     width: 352px;
 }
+
+.label_api code {
+    overflow: auto;
+}
 }

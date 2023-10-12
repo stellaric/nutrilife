@@ -252,7 +252,7 @@ function Inscription() {
               className="Dejamembre"
               onClick={() => handleTabClick("connexion")}
             >
-              Déjà membre? Connectez-vous ici
+            
             </button>
           </p>
         )}

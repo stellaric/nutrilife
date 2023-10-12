@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import logo from '../media/img/logo_nutrilife.png'
 
 
 function openNav() {
@@ -15,7 +16,7 @@ export default function Navbar() {
     <nav className="navbar">
     <div className="menu_ordi">
     <div className="logo">
-      <p>Nutrilife</p>
+    <img src={logo} alt="logo" />
     </div>
     <div className="onglets">
       <Link to={"/"}>Accueil</Link>
@@ -33,7 +34,7 @@ export default function Navbar() {
 
     <div className="menu_mobile">
     <div className="logo">
-      <p>Nutrilife</p>
+    <img src={logo} alt="logo" />
     </div>
       <span className="burger" onClick={openNav}>
         ☰
@@ -44,7 +45,7 @@ export default function Navbar() {
         </a>
         <div className="overlay-content">
           <Link to={"/"}>
-            <p>Nutrilife</p>
+          <img src={logo} alt="logo" />
           </Link>
           <div className="onglets_mobile">
             <Link to={"/"}>Accueil</Link>

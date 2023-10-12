@@ -238,8 +238,25 @@ height: 320px;
 .content_doc {
 height: fit-content;
 }
+
 .button_doc {
     flex-direction: column;
+    height: 250px;
+    overflow: scroll;
 }
-
+.code_doc code {
+    overflow: auto;
+}
+.get , .put, .post,.delete {
+    height: 550px;
+}
+.doc_txt ul {
+    margin-left: 4px;
+    overflow: scroll;
+    height: 351px;
+}
+.tab_doc {
+   
+    height: 450px;
+}
 }
