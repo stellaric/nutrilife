@@ -1,10 +1,12 @@
 const express = require("express");
 const userRoutes = require("./router/UserRoute");
 const dbb = require("./bd/connect");
+
 // on permet au front et au back de communiquer enssemble
 const cors = require("cors");
 const app = express();
-// c
+
+// pour permettre au front de communiquer avec toutes les routes
 const corsOptions = {
   origin: "*",
   credentials: true,
@@ -18,7 +20,7 @@ const port = process.env.PORT || 5002;
 
 app.use(cors(corsOptions));
 
-// on permer au server d'accpter les fichiers json
+// on permet au server d'accpter les fichiers json
 app.use(express.json());
 // code url
 app.use(express.urlencoded({ extended: false }));

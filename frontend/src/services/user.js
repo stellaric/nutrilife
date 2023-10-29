@@ -18,3 +18,15 @@ export const register = async (user) => {
   });
   return response;
 };
+
+export const getAlllUsers = async () => {
+  const response = await fetch(`${process.env.REACT_APP_BASE_URL}/all`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  console.log("resp me", response);
+  return response;
+};

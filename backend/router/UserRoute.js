@@ -8,7 +8,8 @@ const checkAuthMiddleWare = require("../middlewares/auth.middlewares");
 router.post("/register", authUser.register);
 router.get("/me/:id", userController.getUser);
 router.put("/:id", userController.putUser);
-router.delete("/:id", checkAuthMiddleWare.checkAuth, userController.deleteUser);
+router.delete("/:id", userController.deleteUser);
+// , checkAuthMiddleWare.checkAuth
 
 /************ FIN CRUND */
 

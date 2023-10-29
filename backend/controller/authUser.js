@@ -22,7 +22,6 @@ module.exports.register = async (req, res) => {
       message: "remplissez tous les champs",
     });
   }
-  console.log("register");
   // envois a la bdd ce que la personne a saisit
   try {
     const user = await model.create({
@@ -36,7 +35,9 @@ module.exports.register = async (req, res) => {
       message: "l'enregistrement s'est bien pasé ",
     });
   } catch (error) {
-    console.log(error);
+    res.status(404).json({
+      message:"vous n'est pas enregitré"
+    })
   }
 };
 // fin enregistrer un utilisateur

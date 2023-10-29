@@ -6,16 +6,18 @@ import Authentification from "./pages/Authentification/Authentification";
 import Documentation from "./pages/Documentation/Documentation";
 import Profil from "./pages/Profil/Profil";
 import "react-toastify/dist/ReactToastify.css";
+import DisplayAllUsers from "./pages/AfficherTousLesUtilisateurs/DisplayAllUsers";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Accueil />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="authentification" element={<Authentification />} />
-        <Route path="documentation" element={<Documentation />} />
-        <Route path="profil" element={<Profil />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/authentification" element={<Authentification />} />
+        <Route path="/documentation" element={<Documentation />} />
+        <Route path="/profil" element={<Profil />} />
+        <Route path="/utilisateurs" element={<DisplayAllUsers />} />
       </Routes>
     </Router>
   );
