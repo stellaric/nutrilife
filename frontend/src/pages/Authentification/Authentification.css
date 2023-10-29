@@ -1,6 +1,16 @@
+.main_auth {
+  background: url("../../media/img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
 /* bouton inscription et connexion */
 .btnconnexion {
-  background-color: green;
+  background-color: #406b41;
 }
 .tablinks {
   padding: 20px;
@@ -8,6 +18,12 @@
   color: white;
   font-weight: bold;
   font-size: 30px;
+  border: none;
+  background: #d4d4d4;
+}
+
+.tablinks:hover {
+  background: #406b41;
 }
 
 .tabcontent {
@@ -29,7 +45,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding: 50px 0px 80px 80px !important;
   box-sizing: border-box;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 
 .mesinputs {
@@ -59,15 +75,16 @@
 .btn_send {
   display: block;
   margin: 20px auto 0 auto;
-  background: green;
+  background: #406b41;
   padding: 20px 50px;
   border-radius: 30px;
   font-size: 20px;
   color: #fff;
+  border: none;
 }
 
 form button:hover {
-  background-color: pink;
+  background-color: rgb(170, 50, 118);
 }
 /* form button {
   padding: 20px;

@@ -117,6 +117,69 @@ text-transform: capitalize;
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-@media only screen and (max-width: 767px) {
+/* Style pour le fond gris */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* Style pour la boîte blanche */
+.modal-news {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Style pour le contenu du modal */
+.modal-content_news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style pour le bouton de fermeture */
+.modal-news button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Style pour le titre du modal */
+.modal-news h3 {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .main_contact {
+    height: 760px;
+  }
+
+  .form_contact {
+  width: 376px;
+  height: 610px;
+  }
+  .form_contact h2 {
+    font-size: 35px;
+  }
+
+  .form_contact input {
+    width: 97%;
+    height: 61px;
+}
+
+  .form_contact textarea {
+    width: 286px;
+    height: 184px;
+}
 }
